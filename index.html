@@ -1,29 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Manger bouger</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manger bouger</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1>lol</h1>
-    <form>
-    <label for="">Taille</label>
-    <input type="text" name="taille">
-
-    <label for="">Poids</label>
-    <input type="text" name="poids">
-
-    <label for="">Age</label>
-    <input type="text" name="age">
-
-    <label for="">Sexe</label>
-    <input type="text" name="sexe">
-
-    <input type="submit" id="submitConsommateur" value="Submit">
 
 
-</form>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="text-center">Manger-bouger</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="form-group">
+              <label for="taille">Taille</label>
+              <input type="text" class="form-control" name="taille" placeholder="Taille">
+            </div>
+
+            <div class="form-group">
+              <label for="poids">Poids</label>
+              <input type="text" class="form-control" name="poids" placeholder="Poids">
+            </div>
+
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="text" class="form-control" name="age" placeholder="Age">
+            </div>
+
+            <div class="form-group">
+              <label for="sexe">Sexe</label>
+              <input type="text" class="form-control" name="sexe" placeholder="Sexe">
+            </div>
+
+
+            <button type="submit" id="submitConsommateur" class="btn btn-default">Confirmer</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    <section style="padding: 100px 0">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="text-danger text-center">ATTENTION : ces pages n'ont PAS été faites sous le contrôle d'un diététicien ou d'un nutritionniste. Ce site ne peut pas, ne doit pas servir dans le cadre d'un régime, ou pire, dans un cadre médical. Il s'agit uniquement d'un outil destiné à sensibiliser les élèves. En cas de doutes sur vos pratiques alimentaires, consultez un médecin ou un diététicien.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="text-center">By Ashvin.P &amp; Fred.J</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="bundle.js"></script>
-</body>
 
-</html>
+  </body>
+
+  </html>
