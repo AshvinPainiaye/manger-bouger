@@ -26,9 +26,10 @@ export default class Consommateur {
         let taille = parseFloat((<HTMLInputElement>document.getElementById('taille')).value);
         let poids = parseInt((<HTMLInputElement>document.getElementById('poids')).value);
         let age = parseInt((<HTMLInputElement>document.getElementById('age')).value);
-        let sexe = (<HTMLInputElement>document.getElementById('sexe')).value;
+        let homme = (<HTMLInputElement>document.getElementById('homme'));
 
-    
+        let sexe:string;
+        homme.checked ? sexe = 'homme' : sexe = 'femme';
 
        return [taille ,  poids ,  age , sexe] ;
     }

@@ -63,7 +63,9 @@
 	        var taille = parseFloat(document.getElementById('taille').value);
 	        var poids = parseInt(document.getElementById('poids').value);
 	        var age = parseInt(document.getElementById('age').value);
-	        var sexe = document.getElementById('sexe').value;
+	        var homme = document.getElementById('homme');
+	        var sexe;
+	        homme.checked ? sexe = 'homme' : sexe = 'femme';
 	        return [taille, poids, age, sexe];
 	    };
 	    return Consommateur;
