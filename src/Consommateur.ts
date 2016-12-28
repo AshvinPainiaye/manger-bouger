@@ -1,5 +1,5 @@
 
-export default class Consommateur {
+class Consommateur {
 
      getNbCalorie(taille: number, poids:number, age:number,sexe:string) {
 

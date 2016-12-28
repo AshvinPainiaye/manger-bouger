@@ -1,20 +1,23 @@
-import Consommateur from "./Consommateur";
-
-
 class Menu {
 
-    private boisson: string;
-    private plats: string;
-    private quantite: number;
-
-    constructor(boisson: string , plats: string, quantite: number){
-        this.boisson = boisson;
-        this.plats = plats;
-        this.quantite = quantite;
-    }
-
+   public submit(): Array<any> 
+   {
+       let boisson = (<HTMLInputElement>document.getElementById('boisson')).value;
+       let plats = (<HTMLInputElement>document.getElementById('plats')).value;
+       let quantite = parseInt((<HTMLInputElement>document.getElementById('quantite')).value);
    
+      return [boisson,plats,quantite] ;
+   }
+ 
 
 }
 
-let menu = new Menu("coca" , "boudin" , 5);
+let menu = new Menu();
+
+let submitMenu = document.getElementById('submitMenu');
+submitMenu.onsubmit = function(e)
+{
+   e.preventDefault()
+   let info = menu.submit();
+   console.log(info);
+}

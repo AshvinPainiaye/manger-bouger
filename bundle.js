@@ -44,7 +44,6 @@
 /* 0 */
 /***/ function(module, exports) {
 
-	"use strict";
 	var Consommateur = (function () {
 	    function Consommateur() {
 	    }
@@ -70,8 +69,6 @@
 	    };
 	    return Consommateur;
 	}());
-	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = Consommateur;
 	var consommateur = new Consommateur();
 	var submit = document.getElementById('submitConsommateur');
 	submit.onsubmit = function (e) {
