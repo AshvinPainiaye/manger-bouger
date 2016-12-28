@@ -42,8 +42,9 @@ submit.onsubmit = function(e)
 {
     e.preventDefault()
     let info = consommateur.submit();
-    consommateur.getNbCalorie(info[0] , info[1] , info[2] , info[3])
-             
+    let result = consommateur.getNbCalorie(info[0] , info[1] , info[2] , info[3])
+    
+    document.getElementById('resultConsommateur').innerHTML = result.toString() + ' kcal';
 }
 
 

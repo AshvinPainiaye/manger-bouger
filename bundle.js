@@ -49,7 +49,6 @@
 	    function Consommateur() {
 	    }
 	    Consommateur.prototype.getNbCalorie = function (taille, poids, age, sexe) {
-	        console.log(taille, poids, age);
 	        var nbCalorie;
 	        if (sexe == "femme") {
 	            nbCalorie = 9.740 * poids + 172.9 * taille - 4.737 * age + 667.051;
@@ -76,7 +75,8 @@
 	submit.onsubmit = function (e) {
 	    e.preventDefault();
 	    var info = consommateur.submit();
-	    consommateur.getNbCalorie(info[0], info[1], info[2], info[3]);
+	    var result = consommateur.getNbCalorie(info[0], info[1], info[2], info[3]);
+	    document.getElementById('resultConsommateur').innerHTML = result.toString() + ' kcal';
 	};
 
 
