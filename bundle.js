@@ -46,63 +46,38 @@
 
 	"use strict";
 	var Consommateur = (function () {
-	    function Consommateur(taille, poids, age, sexe) {
-	        this.taille = taille;
-	        this.poids = poids;
-	        this.age = age;
-	        this.sexe = sexe;
-	        var submit = document.getElementById('submitConsommateur');
-	        submit.addEventListener("submit", function (event) { console.log(event); });
+	    function Consommateur() {
 	    }
-	    Object.defineProperty(Consommateur.prototype, "nbCalorie", {
-	        get: function () {
-	            var nbCalorie;
-	            if (this.Sexe == "femme") {
-	                nbCalorie = 9.740 * this.Poids + 172.9 * this.Taille - 4.737 * this.Age + 667.051;
-	            }
-	            else {
-	                nbCalorie = 13.707 * this.Poids + 492.3 * this.Taille - 6.673 * this.Age + 77.607;
-	            }
-	            console.log(nbCalorie);
-	            return nbCalorie;
-	        },
-	        enumerable: true,
-	        configurable: true
-	    });
-	    Object.defineProperty(Consommateur.prototype, "Taille", {
-	        get: function () {
-	            return this.taille;
-	        },
-	        enumerable: true,
-	        configurable: true
-	    });
-	    Object.defineProperty(Consommateur.prototype, "Poids", {
-	        get: function () {
-	            return this.poids;
-	        },
-	        enumerable: true,
-	        configurable: true
-	    });
-	    Object.defineProperty(Consommateur.prototype, "Age", {
-	        get: function () {
-	            return this.age;
-	        },
-	        enumerable: true,
-	        configurable: true
-	    });
-	    Object.defineProperty(Consommateur.prototype, "Sexe", {
-	        get: function () {
-	            return this.sexe;
-	        },
-	        enumerable: true,
-	        configurable: true
-	    });
+	    Consommateur.prototype.getNbCalorie = function (taille, poids, age, sexe) {
+	        console.log(taille, poids, age);
+	        var nbCalorie;
+	        if (sexe == "femme") {
+	            nbCalorie = 9.740 * poids + 172.9 * taille - 4.737 * age + 667.051;
+	        }
+	        else if (sexe == "homme") {
+	            nbCalorie = 13.707 * poids + 492.3 * taille - 6.673 * age + 77.607;
+	        }
+	        console.log(nbCalorie);
+	        return nbCalorie;
+	    };
+	    Consommateur.prototype.submit = function () {
+	        var taille = parseFloat(document.getElementById('taille').value);
+	        var poids = parseInt(document.getElementById('poids').value);
+	        var age = parseInt(document.getElementById('age').value);
+	        var sexe = document.getElementById('sexe').value;
+	        return [taille, poids, age, sexe];
+	    };
 	    return Consommateur;
 	}());
 	Object.defineProperty(exports, "__esModule", { value: true });
 	exports.default = Consommateur;
-	var consommateur = new Consommateur(195, 90, 21, "femme");
-	consommateur.nbCalorie;
+	var consommateur = new Consommateur();
+	var submit = document.getElementById('submitConsommateur');
+	submit.onsubmit = function (e) {
+	    e.preventDefault();
+	    var info = consommateur.submit();
+	    consommateur.getNbCalorie(info[0], info[1], info[2], info[3]);
+	};
 
 
 /***/ }
